@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Match Maker</title>
+</head>
+
+<body>
+    <div style="background-color:rgb(183, 232, 235)">
+        <h1 class="text-center bg-info" style="margin-left:-200px" >
+            <h2 class="text-center bg-info" style="color: white;"> Welfinity Client and CareGiver Match Making</h2>
+        </h1>
+            <br><br><br>
+            <h3 style="margin-left:200px">Enter the Client Details</h3>
+            <br>
+        <div class="container">
+            <div style="margin-left:100px;margin-right:300px"></div> <form action="{{ url_for('match')}}" method="POST">
+                <div class="form-group">
+                    <input type="text" name="client_id" class="form-control" placeholder="Enter Client Id">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="clientname" class="form-control" placeholder="Enter Client Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="age" class="form-control" placeholder="Enter Client Age">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="phonenumber" class="form-control" placeholder="Enter Client Phone Number">
+                </div>
+                <div class="form-group">
+
+                    <!-- <input type="text" name="gender" class="form-control" placeholder="Enter Client Gender"> -->
+                    <h6>Select the Gender</h6>
+                        <div style="margin-left:120px">
+                                <input type="radio" name="gender" value="m"> <p style="display:inline">Male</p></input>
+                                <input type="radio" name="gender" value="f"> <p style="display:inline">Female</p></input>
+                        </div>
+                        
+                </div>
+                <div class="form-group">
+                    <input type="text" name="pincode" class="form-control" placeholder="Enter Client pincode">
+                </div>
+                
+                <div class="form-group">
+                
+                    <h6>Select the Language</h6>
+                    <div style="margin-left:120px">
+                        <input type="radio" name="language" value="telugu">
+                        <p style="display:inline">Telugu </p></input>
+                        <input type="radio" name="language" value="tamil">
+                        <p style="display:inline">Tamil </p></input>
+                        <input type="radio" name="language" value="kannada">
+                        <p style="display:inline">Kannada </p></input>
+                        <input type="radio" name="language" value="hindi">
+                        <p style="display:inline">Hindi </p></input>
+                        <input type="radio" name="language" value="other">
+                        <p style="display:inline">Other</p></input>
+                    </div>
+                
+                </div>
+                <div class="form-group">
+
+                    <input type="number" name="weight" class="form-control" placeholder="Enter Client weight">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="height" class="form-control" placeholder="Enter Client height">
+                </div>
+                
+                <h6>Select the shift that client prefers to take service</h6>
+                <div style="margin-left:120px">
+                    <input type="radio" name="shifts" value="1">
+                    <p style="display:inline">First shift (6am-2pm)</p></input>
+                    <input type="radio" name="shifts" value="2">
+                    <p style="display:inline">Second shift (2pm-10pm)</p></input>
+                    <input type="radio" name="shifts" value="3">
+                    <p style="display:inline">Third shift (10pm-6am)</p></input>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="number" name="no_days_services_required" class="form-control"
+                        placeholder="Enter number of days services required">
+                </div>
+                <br>
+                <div class="form-group">
+                    <h4>
+                        Please select the services required
+                    </h4>
+                    <br>
+                    <div style="margin-left:100px">
+                            <h6>Personal Care<h6/>
+                                <div style="margin-left:120px">
+                                    <input type="radio" name="personal_care" value="yes">
+                                    <p style="display:inline">Yes</p></input>
+                                    <input type="radio" name="personal_care" value="no">
+                                    <p style="display:inline">No</p></input>
+                                </div>
+                                
+                            <h6>Nanny Care<h6/>
+                                <div style="margin-left:120px">
+                                <input type="radio" name="nanny_care" value="yes">
+                                <p style="display:inline">Yes</p></input>
+                                <input type="radio" name="nanny_care" value="no">
+                                <p style="display:inline">No</p></input>
+                                </div>
+                                
+                            <h6>Critical Care</h6>
+                                <div style="margin-left:120px">
+                                <input type="radio" name="critical_care" value="yes">
+                                <p style="display:inline">Yes</p></input>
+                                <input type="radio" name="critical_care" value="no">
+                                <p style="display:inline">No</p></input>
+                                </div>
+                                
+                            <h6>Nursing Care</h6>
+                                <div style="margin-left:120px">
+                                <input type="radio" name="nursing_care" value="yes">
+                                <p style="display:inline">Yes</p></input>
+                                <input type="radio" name="nursing_care" value="no">
+                                <p style="display:inline">No</p></input>
+                                </div>
+                                
+                    </div>
+                    
+                </div>
+                <br><br>
+                <div class="form-group text-center">
+                    <input type="submit" value="Submit" class="btn btn-success">
+                </div>
+                <br><br>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

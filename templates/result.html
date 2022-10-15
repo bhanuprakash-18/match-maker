@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1 class="text-center bg-info" style="margin-left:-200px">
+        <h2 class="text-center bg-info" style="color: white;"> Welfinity Client and CareGiver Match Making</h2>
+    </h1>
+    <br><br>    
+    <h2>The Care Giver Matchings found are</h2>
+    <br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Experience</th>
+            <th>Rating</th>
+            <th>Profile</th>
+
+        </tr>
+
+    {%for i in range(0, result[1])%}
+    
+    <tr>
+        <td>{{result[0][i][0]}}</td>
+        <td>{{result[0][i][1]}} </td>
+        <td>{{result[0][i][2]}}</td>
+        <td>{{result[0][i][3]}}</td>
+        <td>{{result[0][i][4]}}</td>
+        <td>{{result[0][i][5]}}</td>
+        <td>{{result[0][i][6]}}</td>
+        <td><button>view</button></td>
+    </tr>
+    
+    {%endfor%}
+    </table>
+
+    <br><br>
+    <h3>Note: </h3> <p>{{result[2]}}</p>
+    <br><br><br>
+    <div class="form-group text-center">
+        <div class="form-group text-center">
+            <button><a href="/" style="color: #04AA6D;" >Go to Home Page</a></button>
+            
+            
+        </div>
+        
+    </div>
+</body>
+
+</html>
